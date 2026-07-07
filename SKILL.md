@@ -1,13 +1,13 @@
 ---
 name: storyboard-amazon-listing-demo
-description: Use when a user wants an Amazon product-led listing storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard image, then 15-second or 30-second video script text. The storyboard image uses 5 numbered 16:9 landscape panels and keeps the product as the main subject.
+description: Use when a user wants an Amazon product-led social cinematic storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and 5 numbered 16:9 continuous keyframes with the product as the main subject.
 ---
 
 # 故事版的 Amazon 商品展示 Skill
 
 ## Purpose
 
-Turn a product into an Amazon-ready product-led storyboard package with exactly three default sections:
+Turn a product into an Amazon-ready product-led social cinematic storyboard package with exactly three default sections:
 
 1. 产品图
 2. 故事版
@@ -18,16 +18,17 @@ This skill is intentionally narrow. It is copied from the TikTok storyboard skil
 The platform difference is only this:
 
 - TikTok version: 9:16 vertical, creator / UGC, phone-video feel.
-- Amazon version: 16:9 landscape, product-led, listing / A+ buyer-proof feel, but still social-commerce usable.
+- Amazon version: 16:9 landscape, product-led, listing / A+ buyer-proof feel, but still social-commerce usable and visually cinematic.
 
 Important: product-led does not mean removing the user. For apparel, wearable items, accessories, beauty, fitness, pet products, tools, or any product whose value depends on human/pet interaction, the storyboard must include the user/wearer/operator/pet in the relevant panels. The product remains the hero, but real use is part of the product proof.
 
-Do not expand this skill into a long Amazon strategy, claim report, task system, or asset pipeline unless the user explicitly asks.
+Do not expand this skill into a long Amazon strategy, claim report, task system, or asset pipeline unless the user explicitly asks. The cinematic layer lives inside `## 2. 故事版`, not as extra default sections.
 
 ## When To Use
 
 Use this skill when the user asks for:
 
+- Amazon product-led social cinematic storyboard.
 - Amazon product listing storyboard.
 - Amazon A+ or listing demo preparation.
 - StoreClaw Amazon image-to-video preparation.
@@ -99,6 +100,10 @@ Prefer official product images from Amazon, the brand site, or ecommerce page. U
 
 Never make the user infer the product from the storyboard alone.
 
+Reference-product rule: if there is no real product image, reliable product page, or clear product screenshot, do not create a final product-containing storyboard. Ask for a product image or label the result as a rough concept reference. Do not create a brief-only product concept and pretend it preserves the SKU.
+
+Internally extract product identity anchors before creating the storyboard: shape, silhouette, color, material, logo/label placement, visible construction details, proportions, scale cues, and what must not change. Do not expose this as an extra default section.
+
 ## Storyboard Rules
 
 The storyboard is the most important part of this skill. It must not be a random lifestyle image or a generic ad mood board.
@@ -115,7 +120,7 @@ The goal of the storyboard is to make an Amazon product demo visually clear:
 - clean but realistic ecommerce lighting,
 - no fake Amazon UI, review stars, badges, coupons, or certifications.
 
-Do not create the storyboard as five unrelated concept images. The storyboard must feel like frames from one continuous shoot. Pick one scene and one visual world first, then vary only camera distance, product action, and framing.
+Do not create the storyboard as five unrelated concept images. The storyboard must feel like frames from one continuous shoot. Pick one Creative Film Treatment and one Shooting World Lock first, then vary only camera distance, product action, and framing.
 
 Default storyboard format:
 
@@ -124,6 +129,45 @@ Default storyboard format:
 - each panel is a 16:9 Amazon-style keyframe,
 - panels must form one continuous product-led demo sequence,
 - product appearance must be copied from the product image.
+
+The `## 2. 故事版` section must include only these internal parts:
+
+```text
+创意大片方向: one concise Creative Film Treatment
+同一拍摄世界锁: one compact Shooting World Lock
+5 格 16:9 连续关键帧: one storyboard/contact-sheet image
+```
+
+These are subparts of the storyboard section. They do not count as extra output sections.
+
+### Creative Film Treatment
+
+Choose one cinematic direction before generating panels. It must come from the product category and buyer use case, not from random style words.
+
+The treatment must lock:
+
+- visual premise: what social-commerce moment are we filming,
+- style: documentary street / premium macro ritual / apartment mirror try-on / creator desk setup / outdoor proof / gift reveal / other product-specific direction,
+- lighting and mood: soft window light, golden hour, diffused overcast, practical indoor light, cinematic side light, etc.,
+- lens and camera language: mirror selfie, handheld close-up, locked product shot, slow push-in, over-the-shoulder, macro detail,
+- color palette: 3-5 grounded colors from the product and scene.
+
+Avoid saying only "cinematic", "premium", or "大片感". Those words are not a treatment unless they specify scene, light, lens, and product action.
+
+### Shooting World Lock
+
+Before writing or generating the 5 keyframes, lock a shared visual theme layer:
+
+- same product and same product-state,
+- same wearer/user/operator/pet when the category needs real use,
+- same location or continuous route,
+- same light source and color temperature,
+- same camera/lens language,
+- same wardrobe, props, surface, and background family,
+- same product scale and placement logic,
+- same motion language from frame to frame.
+
+Visual consistency beats single-frame beauty. Five medium-but-consistent frames are better than five beautiful mismatched frames.
 
 The 5-frame visual sequence should follow this logic:
 
@@ -158,6 +202,7 @@ Every storyboard image prompt must include a strict Amazon product-led contract.
 - The storyboard must look like Amazon listing / A+ product demo frames, not TikTok UGC frames.
 - Every panel must be 16:9 landscape.
 - All five panels must share one continuous visual world: same wearer/user, same product, same room or street, same light, same camera look.
+- Every panel must inherit the Creative Film Treatment and Shooting World Lock.
 - Product should usually occupy 45%-70% of each frame.
 - Product use must be based on actions the product can visibly support. If the product has no visible physical result, do not invent one.
 - At least two panels must show product structure, texture, component, size, or operation close enough for inspection.
@@ -167,6 +212,8 @@ Every storyboard image prompt must include a strict Amazon product-led contract.
 - The final storyboard must prioritize product proof plus real-use social believability over static catalog layout.
 
 For apparel, default to a faceless or partially cropped wearer when model realism is risky. Show torso, hands, mirror reflection, shoulder-level crop, hem adjustment, or walking crop. Avoid generating a new face in every panel.
+
+For high-AI-risk categories, prefer believable filming constraints over over-produced scenes: cropped faces, partial hands, real surface texture, imperfect framing, lived-in rooms, and motivated light. Product truth and continuity are more valuable than a polished fantasy ad.
 
 Avoid:
 
@@ -259,7 +306,9 @@ For 30 seconds:
 | 23-30s | ... | Check before purchase | "Confirm the size and details before purchase." |
 ```
 
-The script must match the storyboard exactly. Do not introduce new people, rooms, claims, or product actions that are not in the storyboard. Use natural English listing-demo language, not exaggerated brand-deck language.
+The script must match the storyboard exactly. Do not introduce new people, rooms, claims, product actions, or a new film treatment that is not in the storyboard. Use natural English listing-demo language, not exaggerated brand-deck language.
+
+The script should follow show-don't-tell: the visuals prove about 60% of the message, and copy only labels or amplifies what is already visible. Do not use the voiceover to compensate for a weak storyboard.
 
 For Amazon-sensitive categories such as pet, baby, beauty, health, supplement, electronic performance, safety, compatibility, or durability, keep script claims factual and visible. Do not promise cure, safety, indestructibility, medical effects, or before/after results unless the evidence explicitly supports it.
 
@@ -284,6 +333,8 @@ Default settings:
 - 16:9 landscape
 - 15 seconds
 - product-led Amazon listing demo with social-media usable real-use context
+- one Creative Film Treatment selected from the product category
+- one Shooting World Lock for all five panels
 - clean realistic ecommerce light
 - buyer-relevant background
 - product occupies 45%-70% of frame
@@ -354,7 +405,10 @@ Before responding, check:
 
 - Does every product have a product image first?
 - Is there a storyboard image after the product image?
+- Does `## 2. 故事版` include a Creative Film Treatment?
+- Does `## 2. 故事版` include a Shooting World Lock?
 - Is the storyboard a 5-panel 16:9 landscape contact sheet?
+- Do all five panels feel like one continuous shoot?
 - Is the product dominant and inspectable?
 - Is there a 15-second or 30-second script after the storyboard?
 - Are all screen subtitles and voiceover lines in English?
