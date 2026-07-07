@@ -18,7 +18,9 @@ This skill is intentionally narrow. It is copied from the TikTok storyboard skil
 The platform difference is only this:
 
 - TikTok version: 9:16 vertical, creator / UGC, phone-video feel.
-- Amazon version: 16:9 landscape, product-led, listing / A+ buyer-proof feel.
+- Amazon version: 16:9 landscape, product-led, listing / A+ buyer-proof feel, but still social-commerce usable.
+
+Important: product-led does not mean removing the user. For apparel, wearable items, accessories, beauty, fitness, pet products, tools, or any product whose value depends on human/pet interaction, the storyboard must include the user/wearer/operator/pet in the relevant panels. The product remains the hero, but real use is part of the product proof.
 
 Do not expand this skill into a long Amazon strategy, claim report, task system, or asset pipeline unless the user explicitly asks.
 
@@ -105,6 +107,8 @@ The goal of the storyboard is to make an Amazon product demo visually clear:
 
 - product is the main subject,
 - product shape and components are inspectable,
+- real user or wearer proves use when the category requires it,
+- social-media usable context, not a dead catalog layout,
 - camera distance and angle are clear,
 - one useful buyer-proof idea per frame,
 - scene supports the product instead of replacing it,
@@ -122,10 +126,10 @@ Default storyboard format:
 The 5-frame visual sequence should follow this logic:
 
 1. Product identity: clean hero view showing the exact SKU, shape, color, and included components.
-2. Setup / buyer question: show how the product is prepared, opened, placed, worn, installed, or selected.
-3. Product process / detail: close-up proof of the visible feature or structure.
-4. Use demo: product being used in a realistic scene while remaining clearly visible.
-5. Purchase confidence: scale, included components, finished use state, or clean final product-led view.
+2. Setup / buyer question: show how the product is prepared, opened, placed, worn, installed, selected, or customized.
+3. User proof / detail: show a real person, hand, wearer, operator, or pet interacting with the product while preserving product visibility.
+4. Use demo: product being used in a realistic social or daily scene while remaining clearly visible.
+5. Purchase confidence / social payoff: scale, fit, included components, finished use state, or a clean final product-led social moment.
 
 For every product, derive the visual chain from what the product actually does. Do not reuse a previous room, person, pet, kitchen, or scene from memory unless the current product naturally needs it.
 
@@ -134,6 +138,7 @@ Keep continuity locked inside the current storyboard:
 - same product,
 - same product color and geometry,
 - same accessories or package only if visible in the product image,
+- same user/wearer/operator role if the storyboard uses one,
 - same location only within this generated sequence,
 - same lighting family,
 - same use state where relevant,
@@ -150,16 +155,17 @@ Every storyboard image prompt must include a strict Amazon product-led contract.
 - Product should usually occupy 45%-70% of each frame.
 - Product use must be based on actions the product can visibly support. If the product has no visible physical result, do not invent one.
 - At least two panels must show product structure, texture, component, size, or operation close enough for inspection.
-- Human presence should usually be hands only, unless a person is necessary to show wearing, fit, or scale.
-- Backgrounds must be simple and buyer-relevant: table, kitchen counter, bathroom, shelf, outdoor use area, pet area, workspace, or other product-specific context.
+- Human presence must match the category. Apparel and accessories require a wearer. Tools require hands/operator. Pet products require pet interaction when the value depends on use. Use hands only for products where a full user would distract from proof.
+- Backgrounds must be simple and buyer-relevant but socially usable: mirror/selfie room, street, studio corner, desk, gym, pet area, workspace, kitchen counter, bathroom shelf, outdoor use area, or other product-specific context.
 - Text inside generated images must be avoided unless it is required by the product reference. Add final copy later as design overlay, not as AI-generated fake text.
-- The final storyboard must prioritize product proof over beauty, lifestyle, or emotional storytelling.
+- The final storyboard must prioritize product proof plus real-use social believability over static catalog layout.
 
 Avoid:
 
 - TikTok 9:16 vertical framing,
 - creator face dominating the frame,
 - product hidden inside lifestyle decor,
+- removing the user/wearer when the product needs a user to make sense,
 - glossy fake luxury scene,
 - floating product,
 - magical transformation,
@@ -175,6 +181,7 @@ Reject and regenerate the storyboard before final delivery if it has:
 - product geometry or color drift,
 - invented packaging, logo, badge, or readable claim,
 - person, pet, or room becoming the main subject,
+- apparel/accessory storyboard has no wearer or use person,
 - 9:16 TikTok framing,
 - a payoff scene that implies medical, health, pet safety, beauty, or performance claims beyond product evidence.
 
@@ -261,11 +268,11 @@ Default settings:
 
 - 16:9 landscape
 - 15 seconds
-- product-led Amazon listing demo
+- product-led Amazon listing demo with social-media usable real-use context
 - clean realistic ecommerce light
 - buyer-relevant background
 - product occupies 45%-70% of frame
-- hands only when proving scale or operation
+- user/wearer/operator included when the category requires real-use proof
 - one simple product action per shot
 
 Prefer:
@@ -273,6 +280,8 @@ Prefer:
 - clean surfaces,
 - product close-ups,
 - visible components,
+- wearer or use person when the product is apparel/accessory/use-dependent,
+- social proof scenes that still keep the product readable,
 - realistic hand scale,
 - simple use context,
 - real contact shadows,

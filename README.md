@@ -15,7 +15,9 @@ Amazon 版沿用 TikTok storyboard skill 的三段式输出结构，只改平台
 关键差异：
 
 - TikTok：9:16 vertical，creator / UGC，手机短视频感。
-- Amazon：16:9 landscape，产品为主，listing / A+ 商品展示感。
+- Amazon：16:9 landscape，产品为主，listing / A+ 商品展示感，但仍要具备社媒使用语境。
+
+`产品为主` 不等于删掉使用人。服装、配饰、美妆、工具、宠物用品等依赖真实使用场景的类目，故事版必须出现穿着者、使用人、操作者或宠物互动；只是不能让人物压过商品。
 
 不要默认输出 FYPro 关键词、JSON、长平台分析或额外建议。
 
