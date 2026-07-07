@@ -115,6 +115,8 @@ The goal of the storyboard is to make an Amazon product demo visually clear:
 - clean but realistic ecommerce lighting,
 - no fake Amazon UI, review stars, badges, coupons, or certifications.
 
+Do not create the storyboard as five unrelated concept images. The storyboard must feel like frames from one continuous shoot. Pick one scene and one visual world first, then vary only camera distance, product action, and framing.
+
 Default storyboard format:
 
 - one contact-sheet style image,
@@ -139,8 +141,11 @@ Keep continuity locked inside the current storyboard:
 - same product color and geometry,
 - same accessories or package only if visible in the product image,
 - same user/wearer/operator role if the storyboard uses one,
+- same person or same cropped body identity across panels,
 - same location only within this generated sequence,
 - same lighting family,
+- same camera language,
+- same shirt fit and print placement for apparel,
 - same use state where relevant,
 - no scene carried over from previous projects unless the user asks for it.
 
@@ -152,6 +157,7 @@ Every storyboard image prompt must include a strict Amazon product-led contract.
 
 - The storyboard must look like Amazon listing / A+ product demo frames, not TikTok UGC frames.
 - Every panel must be 16:9 landscape.
+- All five panels must share one continuous visual world: same wearer/user, same product, same room or street, same light, same camera look.
 - Product should usually occupy 45%-70% of each frame.
 - Product use must be based on actions the product can visibly support. If the product has no visible physical result, do not invent one.
 - At least two panels must show product structure, texture, component, size, or operation close enough for inspection.
@@ -160,12 +166,17 @@ Every storyboard image prompt must include a strict Amazon product-led contract.
 - Text inside generated images must be avoided unless it is required by the product reference. Add final copy later as design overlay, not as AI-generated fake text.
 - The final storyboard must prioritize product proof plus real-use social believability over static catalog layout.
 
+For apparel, default to a faceless or partially cropped wearer when model realism is risky. Show torso, hands, mirror reflection, shoulder-level crop, hem adjustment, or walking crop. Avoid generating a new face in every panel.
+
 Avoid:
 
 - TikTok 9:16 vertical framing,
 - creator face dominating the frame,
 - product hidden inside lifestyle decor,
 - removing the user/wearer when the product needs a user to make sense,
+- five unrelated scenes or five different people in one storyboard,
+- changing the wearer, room, lighting, or shirt fit between panels,
+- AI-looking perfect faces, plastic skin, extra fingers, impossible hands, or overposed models,
 - glossy fake luxury scene,
 - floating product,
 - magical transformation,
@@ -182,6 +193,8 @@ Reject and regenerate the storyboard before final delivery if it has:
 - invented packaging, logo, badge, or readable claim,
 - person, pet, or room becoming the main subject,
 - apparel/accessory storyboard has no wearer or use person,
+- storyboard panels do not look like the same shoot,
+- wearer identity, shirt fit, print placement, or lighting changes between panels,
 - 9:16 TikTok framing,
 - a payoff scene that implies medical, health, pet safety, beauty, or performance claims beyond product evidence.
 
@@ -195,6 +208,8 @@ When a storyboard image already exists, treat these as locked for that project:
 - selected hands/person only if present,
 - selected location only if present,
 - lighting and ecommerce-shot style,
+- camera distance progression,
+- apparel fit, print placement, and wearer crop,
 - object/result continuity.
 
 Do not rewrite prompts as if starting from a blank canvas, and do not reuse a previous storyboard's person or room as a default.
@@ -282,6 +297,8 @@ Prefer:
 - visible components,
 - wearer or use person when the product is apparel/accessory/use-dependent,
 - social proof scenes that still keep the product readable,
+- one wearer and one location across all panels,
+- cropped torso/hands/mirror shots when they reduce fake model risk,
 - realistic hand scale,
 - simple use context,
 - real contact shadows,
