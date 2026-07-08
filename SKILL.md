@@ -1,6 +1,6 @@
 ---
 name: storyboard-amazon-listing-demo
-description: Use when a user wants an Amazon product-led category-adapted storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and 5 numbered 16:9 product-proof keyframes with the product as the main subject.
+description: Use when a user wants an Amazon product-led category-adapted storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and one storyboard image with 5 numbered 16:9 product-proof keyframes with the product as the main subject.
 ---
 
 # 故事版的 Amazon 商品展示 Skill
@@ -140,8 +140,8 @@ Do not create the storyboard as five unrelated concept images. The storyboard mu
 
 Default storyboard format:
 
-- 5 numbered 16:9 landscape keyframes by default,
-- each keyframe can be generated as an independent image; combine into a contact sheet only when the user asks or the tool requires it,
+- one storyboard/contact-sheet image,
+- 5 numbered 16:9 landscape panels inside that one storyboard image,
 - each panel is a 16:9 Amazon-style keyframe,
 - panels must form one continuous product-led demo sequence,
 - product appearance must be copied from the product image.
@@ -151,7 +151,7 @@ The `## 2. 故事版` section must include only these internal parts:
 ```text
 创意大片方向: one concise Creative Film Treatment
 同一拍摄世界锁: one compact Shooting World Lock
-5 格 16:9 连续关键帧: five independent product-proof keyframes, or one contact sheet only if requested
+5 格 16:9 连续关键帧: one storyboard/contact-sheet image containing five numbered 16:9 product-proof panels
 ```
 
 These are subparts of the storyboard section. They do not count as extra output sections.
@@ -427,7 +427,7 @@ Before responding, check:
 - Did you infer and apply one Category Adapter?
 - Does `## 2. 故事版` include a Creative Film Treatment?
 - Does `## 2. 故事版` include a Shooting World Lock?
-- Does the storyboard contain five 16:9 product-proof keyframes, generated independently or combined only when requested?
+- Is the storyboard one image containing five numbered 16:9 product-proof panels?
 - Do all five keyframes feel like one coherent product-proof sequence?
 - Is the product dominant and inspectable?
 - Is there a 15-second or 30-second script after the storyboard?

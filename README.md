@@ -36,7 +36,7 @@ Amazon 版沿用 TikTok storyboard skill 的三段式输出结构，只改平台
 + 再写 5 个 16:9 keyframe
 ```
 
-默认生成 5 个可独立使用的 16:9 keyframe；只有用户明确要求拼图时，才把它们合成 contact sheet。
+默认输出仍然是一张故事版图：图里包含 5 格连续的 16:9 keyframe。类目适配只发生在内部，不作为额外输出段落。
 
 规则来源：
 
