@@ -1,13 +1,13 @@
 ---
 name: storyboard-amazon-listing-demo
-description: Use when a user wants an Amazon product-led social cinematic storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and 5 numbered 16:9 continuous keyframes with the product as the main subject.
+description: Use when a user wants an Amazon product-led category-adapted storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and 5 numbered 16:9 product-proof keyframes with the product as the main subject.
 ---
 
 # 故事版的 Amazon 商品展示 Skill
 
 ## Purpose
 
-Turn a product into an Amazon-ready product-led social cinematic storyboard package with exactly three default sections:
+Turn a product into an Amazon-ready product-led, category-adapted storyboard package with exactly three default sections:
 
 1. 产品图
 2. 故事版
@@ -22,13 +22,13 @@ The platform difference is only this:
 
 Important: product-led does not mean removing the user. For apparel, wearable items, accessories, beauty, fitness, pet products, tools, or any product whose value depends on human/pet interaction, the storyboard must include the user/wearer/operator/pet in the relevant panels. The product remains the hero, but real use is part of the product proof.
 
-Do not expand this skill into a long Amazon strategy, claim report, task system, or asset pipeline unless the user explicitly asks. The cinematic layer lives inside `## 2. 故事版`, not as extra default sections.
+Do not expand this skill into a long Amazon strategy, claim report, task system, or asset pipeline unless the user explicitly asks. Category selection, product locks, and the cinematic layer live inside `## 2. 故事版`, not as extra default sections.
 
 ## When To Use
 
 Use this skill when the user asks for:
 
-- Amazon product-led social cinematic storyboard.
+- Amazon product-led category-adapted storyboard.
 - Amazon product listing storyboard.
 - Amazon A+ or listing demo preparation.
 - StoreClaw Amazon image-to-video preparation.
@@ -104,6 +104,22 @@ Reference-product rule: if there is no real product image, reliable product page
 
 Internally extract product identity anchors before creating the storyboard: shape, silhouette, color, material, logo/label placement, visible construction details, proportions, scale cues, and what must not change. Do not expose this as an extra default section.
 
+## Category Adapter
+
+Before choosing a creative direction, infer one primary category and any secondary modifier. Do not expose this as an extra default output section. The adapter decides what must stay locked, which keyframes are useful, and which scenes are high risk.
+
+Primary categories:
+
+- Apparel / wearable: lock color, silhouette, neckline, sleeve length, fit, print / logo placement, wearer crop, and fabric behaviour. Prefer torso crops, fabric detail, flat lay, natural fit check, and hanger or folded product shots. Avoid model-first fashion ads and clothing-type drift.
+- Custom / personalized product modifier: lock one Design Asset. The same uploaded image, logo, message concept, or visual placeholder must appear across preview, detail, worn/use, and final product frames. Do not switch between blank boxes, different photos, new logos, slogans, or different print placements.
+- Pet product: lock product shape, size, material, pet contact method, and scale against the pet. Prefer floor-level use, hand setup, pet interaction, size proof, and texture detail. Avoid unsupported safety, indestructibility, health, or training claims.
+- Tool / kitchen / home gadget: lock parts, buttons, handles, openings, blades, cords, ports, setup order, and hand operation. Prefer setup, operation, detail, use result, and storage. Avoid inventing parts or showing impossible use.
+- Beauty / personal care: lock packaging, applicator, texture, use area, and visible amount. Prefer bottle / jar hero, texture, hand application, bathroom or vanity context, and finished routine. Avoid medical, before/after, cure, whitening, anti-aging, or exaggerated skin claims.
+- Electronics / accessory: lock ports, buttons, screen state, cable direction, size ratio, and compatible object. Prefer desk setup, connection detail, hand scale, interface-free product use, and clean final placement. Avoid fake UI, wrong ports, fake brands, and sci-fi lighting.
+- Gift / decor / lifestyle object: lock material, size, placement, packaging, and surface context. Prefer tabletop, unboxing, room placement, close detail, and final decor state. Avoid luxury showroom overreach and excessive emotional acting.
+
+Use the lowest-risk keyframes that still prove the product. Human faces, large groups, dramatic reactions, outdoor lifestyle scenes, readable UI, and perfect model poses are high-risk unless the category and user request specifically require them.
+
 ## Storyboard Rules
 
 The storyboard is the most important part of this skill. It must not be a random lifestyle image or a generic ad mood board.
@@ -120,12 +136,12 @@ The goal of the storyboard is to make an Amazon product demo visually clear:
 - clean but realistic ecommerce lighting,
 - no fake Amazon UI, review stars, badges, coupons, or certifications.
 
-Do not create the storyboard as five unrelated concept images. The storyboard must feel like frames from one continuous shoot. Pick one Creative Film Treatment and one Shooting World Lock first, then vary only camera distance, product action, and framing.
+Do not create the storyboard as five unrelated concept images. The storyboard must feel like one category-aware product proof sequence. Pick one Creative Film Treatment, one Shooting World Lock, and the relevant Category Adapter first, then vary only camera distance, product action, and framing.
 
 Default storyboard format:
 
-- one contact-sheet style image,
-- 5 numbered landscape panels,
+- 5 numbered 16:9 landscape keyframes by default,
+- each keyframe can be generated as an independent image; combine into a contact sheet only when the user asks or the tool requires it,
 - each panel is a 16:9 Amazon-style keyframe,
 - panels must form one continuous product-led demo sequence,
 - product appearance must be copied from the product image.
@@ -135,39 +151,39 @@ The `## 2. 故事版` section must include only these internal parts:
 ```text
 创意大片方向: one concise Creative Film Treatment
 同一拍摄世界锁: one compact Shooting World Lock
-5 格 16:9 连续关键帧: one storyboard/contact-sheet image
+5 格 16:9 连续关键帧: five independent product-proof keyframes, or one contact sheet only if requested
 ```
 
 These are subparts of the storyboard section. They do not count as extra output sections.
 
 ### Creative Film Treatment
 
-Choose one cinematic direction before generating panels. It must come from the product category and buyer use case, not from random style words.
+Choose one cinematic direction before generating panels. It must come from the product category, buyer use case, and risk level, not from random style words.
 
 The treatment must lock:
 
 - visual premise: what social-commerce moment are we filming,
-- style: documentary street / premium macro ritual / apartment mirror try-on / creator desk setup / outdoor proof / gift reveal / other product-specific direction,
+- style: ordinary customer video / clean product proof / premium macro detail / apartment try-on / creator desk setup / outdoor proof / gift reveal / other product-specific direction,
 - lighting and mood: soft window light, golden hour, diffused overcast, practical indoor light, cinematic side light, etc.,
 - lens and camera language: mirror selfie, handheld close-up, locked product shot, slow push-in, over-the-shoulder, macro detail,
 - color palette: 3-5 grounded colors from the product and scene.
 
-Avoid saying only "cinematic", "premium", or "大片感". Those words are not a treatment unless they specify scene, light, lens, and product action.
+Avoid saying only "cinematic", "premium", or "大片感". Those words are not a treatment unless they specify scene, light, lens, product action, and why that treatment is safe for the category.
 
 ### Shooting World Lock
 
-Before writing or generating the 5 keyframes, lock a shared visual theme layer:
+Before writing or generating the 5 keyframes, lock a shared visual theme layer. Continuity is defined first by product truth, then by the category adapter, then by the scene:
 
 - same product and same product-state,
 - same wearer/user/operator/pet when the category needs real use,
-- same location or continuous route,
+- same location or continuous campaign world; process sequences may move from preview to detail to use if the product and category locks remain stable,
 - same light source and color temperature,
 - same camera/lens language,
 - same wardrobe, props, surface, and background family,
 - same product scale and placement logic,
 - same motion language from frame to frame.
 
-Visual consistency beats single-frame beauty. Five medium-but-consistent frames are better than five beautiful mismatched frames.
+Product consistency beats single-frame beauty. Five medium-but-consistent, category-safe frames are better than five beautiful mismatched frames.
 
 The 5-frame visual sequence should follow this logic:
 
@@ -201,19 +217,19 @@ Every storyboard image prompt must include a strict Amazon product-led contract.
 
 - The storyboard must look like Amazon listing / A+ product demo frames, not TikTok UGC frames.
 - Every panel must be 16:9 landscape.
-- All five panels must share one continuous visual world: same wearer/user, same product, same room or street, same light, same camera look.
+- All five panels must share one product-proof system: same product locks, same category adapter, same design asset when personalized, same material logic, and one coherent campaign visual language.
 - Every panel must inherit the Creative Film Treatment and Shooting World Lock.
 - Product should usually occupy 45%-70% of each frame.
 - Product use must be based on actions the product can visibly support. If the product has no visible physical result, do not invent one.
 - At least two panels must show product structure, texture, component, size, or operation close enough for inspection.
 - Human presence must match the category. Apparel and accessories require a wearer. Tools require hands/operator. Pet products require pet interaction when the value depends on use. Use hands only for products where a full user would distract from proof.
-- Backgrounds must be simple and buyer-relevant but socially usable: mirror/selfie room, street, studio corner, desk, gym, pet area, workspace, kitchen counter, bathroom shelf, outdoor use area, or other product-specific context.
+- Backgrounds must be simple and buyer-relevant but socially usable: mirror/selfie room, street, studio corner, desk, gym, pet area, workspace, kitchen counter, bathroom shelf, outdoor use area, or other product-specific context selected by the Category Adapter.
 - Text inside generated images must be avoided unless it is required by the product reference. Add final copy later as design overlay, not as AI-generated fake text.
 - The final storyboard must prioritize product proof plus real-use social believability over static catalog layout.
 
 For apparel, default to a faceless or partially cropped wearer when model realism is risky. Show torso, hands, mirror reflection, shoulder-level crop, hem adjustment, or walking crop. Avoid generating a new face in every panel.
 
-For high-AI-risk categories, prefer believable filming constraints over over-produced scenes: cropped faces, partial hands, real surface texture, imperfect framing, lived-in rooms, and motivated light. Product truth and continuity are more valuable than a polished fantasy ad.
+For high-AI-risk categories, prefer believable filming constraints over over-produced scenes: cropped faces, partial hands, real surface texture, matte material, imperfect framing, lived-in rooms, and motivated light. Product truth and continuity are more valuable than a polished fantasy ad.
 
 Avoid:
 
@@ -223,6 +239,7 @@ Avoid:
 - removing the user/wearer when the product needs a user to make sense,
 - five unrelated scenes or five different people in one storyboard,
 - changing the wearer, room, lighting, or shirt fit between panels,
+- changing the category adapter, Design Asset, print area, interface, part set, or material logic between panels,
 - AI-looking perfect faces, plastic skin, extra fingers, impossible hands, or overposed models,
 - glossy fake luxury scene,
 - floating product,
@@ -240,7 +257,8 @@ Reject and regenerate the storyboard before final delivery if it has:
 - invented packaging, logo, badge, or readable claim,
 - person, pet, or room becoming the main subject,
 - apparel/accessory storyboard has no wearer or use person,
-- storyboard panels do not look like the same shoot,
+- storyboard panels do not look like one coherent product-proof sequence,
+- personalized product changes its Design Asset between panels,
 - wearer identity, shirt fit, print placement, or lighting changes between panels,
 - 9:16 TikTok framing,
 - a payoff scene that implies medical, health, pet safety, beauty, or performance claims beyond product evidence.
@@ -333,6 +351,7 @@ Default settings:
 - 16:9 landscape
 - 15 seconds
 - product-led Amazon listing demo with social-media usable real-use context
+- one Category Adapter selected before the creative direction
 - one Creative Film Treatment selected from the product category
 - one Shooting World Lock for all five panels
 - clean realistic ecommerce light
@@ -404,11 +423,12 @@ Choose product order by Amazon storyboard readiness:
 Before responding, check:
 
 - Does every product have a product image first?
-- Is there a storyboard image after the product image?
+- Is there a storyboard after the product image?
+- Did you infer and apply one Category Adapter?
 - Does `## 2. 故事版` include a Creative Film Treatment?
 - Does `## 2. 故事版` include a Shooting World Lock?
-- Is the storyboard a 5-panel 16:9 landscape contact sheet?
-- Do all five panels feel like one continuous shoot?
+- Does the storyboard contain five 16:9 product-proof keyframes, generated independently or combined only when requested?
+- Do all five keyframes feel like one coherent product-proof sequence?
 - Is the product dominant and inspectable?
 - Is there a 15-second or 30-second script after the storyboard?
 - Are all screen subtitles and voiceover lines in English?
