@@ -1,13 +1,13 @@
 ---
 name: storyboard-amazon-listing-demo
-description: Use when a user wants an Amazon product-led category-adapted storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and one storyboard image with 5 numbered 16:9 product-proof keyframes with the product as the main subject.
+description: Use when a user wants an Amazon product-led category-adapted creative storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and one storyboard image with 5 numbered 16:9 product-proof keyframes with the product as the main subject.
 ---
 
 # 故事版的 Amazon 商品展示 Skill
 
 ## Purpose
 
-Turn a product into an Amazon-ready product-led, category-adapted storyboard package with exactly three default sections:
+Turn a product into an Amazon-ready product-led, category-adapted creative storyboard package with exactly three default sections:
 
 1. 产品图
 2. 故事版
@@ -28,7 +28,7 @@ Do not expand this skill into a long Amazon strategy, claim report, task system,
 
 Use this skill when the user asks for:
 
-- Amazon product-led category-adapted storyboard.
+- Amazon product-led category-adapted creative storyboard.
 - Amazon product listing storyboard.
 - Amazon A+ or listing demo preparation.
 - StoreClaw Amazon image-to-video preparation.
@@ -118,7 +118,31 @@ Primary categories:
 - Electronics / accessory: lock ports, buttons, screen state, cable direction, size ratio, and compatible object. Prefer desk setup, connection detail, hand scale, interface-free product use, and clean final placement. Avoid fake UI, wrong ports, fake brands, and sci-fi lighting.
 - Gift / decor / lifestyle object: lock material, size, placement, packaging, and surface context. Prefer tabletop, unboxing, room placement, close detail, and final decor state. Avoid luxury showroom overreach and excessive emotional acting.
 
-Use the lowest-risk keyframes that still prove the product. Human faces, large groups, dramatic reactions, outdoor lifestyle scenes, readable UI, and perfect model poses are high-risk unless the category and user request specifically require them.
+Use the lowest-risk camera method that can still carry a real buyer event. Human faces, large groups, dramatic reactions, outdoor lifestyle scenes, readable UI, and perfect model poses are high-risk unless the category and user request specifically require them, but do not replace the event with a static catalog sequence.
+
+## Creative Proof Balance
+
+The Category Adapter is a guardrail, not the creative idea. Do not let it collapse the storyboard into five inspection shots.
+
+Before generating the storyboard image, choose one buyer event that makes the product matter:
+
+- Apparel / wearable: first wear, fit check, outfit transition, mirror reveal, activity-ready moment.
+- Custom / personalized product: upload-to-print reveal, gift reveal, group identity, creator merch, memory made wearable.
+- Pet product: pet discovers it, owner sets it up, first interaction, size proof, daily routine.
+- Tool / kitchen / home gadget: problem setup, operation moment, useful result, cleanup or storage.
+- Beauty / personal care: routine step, texture reveal, application moment, vanity/bathroom finish.
+- Electronics / accessory: connection setup, desk/travel use, hand-scale proof, clean setup result.
+- Gift / decor / lifestyle object: unboxing, placement, room mood change, gifting moment.
+
+The five panels should balance proof and story:
+
+1. SKU anchor: exact product identity.
+2. Event setup: why the product is being used now.
+3. Tactile proof: material, print, component, operation, scale, or texture.
+4. Use / emotional payoff: the product doing its job in a real scene.
+5. Purchase confidence: final readable product state, fit, result, setup, or included pieces.
+
+At least two panels must be inspectable product proof, and at least two panels must carry the buyer event. Reject a storyboard that is only flat lay, macro, hanger, pack shot, and CTA unless the user explicitly asks for catalog assets.
 
 ## Storyboard Rules
 
@@ -136,7 +160,7 @@ The goal of the storyboard is to make an Amazon product demo visually clear:
 - clean but realistic ecommerce lighting,
 - no fake Amazon UI, review stars, badges, coupons, or certifications.
 
-Do not create the storyboard as five unrelated concept images. The storyboard must feel like one category-aware product proof sequence. Pick one Creative Film Treatment, one Shooting World Lock, and the relevant Category Adapter first, then vary only camera distance, product action, and framing.
+Do not create the storyboard as five unrelated concept images. The storyboard must feel like one category-aware product proof sequence with a buyer event. Pick one Creative Film Treatment, one Shooting World Lock, the relevant Category Adapter, and one buyer event first, then vary camera distance, product action, and framing.
 
 Default storyboard format:
 
@@ -158,17 +182,17 @@ These are subparts of the storyboard section. They do not count as extra output 
 
 ### Creative Film Treatment
 
-Choose one cinematic direction before generating panels. It must come from the product category, buyer use case, and risk level, not from random style words.
+Choose one cinematic direction before generating panels. It must come from the product category, buyer event, buyer use case, and risk level, not from random style words.
 
 The treatment must lock:
 
-- visual premise: what social-commerce moment are we filming,
+- visual premise: what buyer event are we filming,
 - style: ordinary customer video / clean product proof / premium macro detail / apartment try-on / creator desk setup / outdoor proof / gift reveal / other product-specific direction,
 - lighting and mood: soft window light, golden hour, diffused overcast, practical indoor light, cinematic side light, etc.,
 - lens and camera language: mirror selfie, handheld close-up, locked product shot, slow push-in, over-the-shoulder, macro detail,
 - color palette: 3-5 grounded colors from the product and scene.
 
-Avoid saying only "cinematic", "premium", or "大片感". Those words are not a treatment unless they specify scene, light, lens, product action, and why that treatment is safe for the category.
+Avoid saying only "cinematic", "premium", or "大片感". Those words are not a treatment unless they specify scene, light, lens, product action, buyer event, and why that treatment is safe for the category.
 
 ### Shooting World Lock
 
@@ -253,6 +277,7 @@ Avoid:
 Reject and regenerate the storyboard before final delivery if it has:
 
 - product not dominant in most panels,
+- no visible buyer event; five panels are only product inspection or catalog pack shots,
 - product geometry or color drift,
 - invented packaging, logo, badge, or readable claim,
 - person, pet, or room becoming the main subject,
@@ -425,10 +450,12 @@ Before responding, check:
 - Does every product have a product image first?
 - Is there a storyboard after the product image?
 - Did you infer and apply one Category Adapter?
+- Did you choose one buyer event and keep it visible inside `## 2. 故事版`?
 - Does `## 2. 故事版` include a Creative Film Treatment?
 - Does `## 2. 故事版` include a Shooting World Lock?
 - Is the storyboard one image containing five numbered 16:9 product-proof panels?
 - Do all five keyframes feel like one coherent product-proof sequence?
+- Do at least two panels carry the buyer event rather than only product inspection?
 - Is the product dominant and inspectable?
 - Is there a 15-second or 30-second script after the storyboard?
 - Are all screen subtitles and voiceover lines in English?

@@ -1,6 +1,6 @@
 # Storyboard Amazon Listing Demo Skill
 
-Amazon 版沿用 TikTok storyboard skill 的三段式输出结构，只改平台差异，并把第 2 段升级为类目适配的商品证明故事版。
+Amazon 版沿用 TikTok storyboard skill 的三段式输出结构，只改平台差异，并把第 2 段升级为类目适配的创意商品证明故事版。
 
 默认只输出：
 
@@ -32,11 +32,14 @@ Amazon 版沿用 TikTok storyboard skill 的三段式输出结构，只改平台
 ```text
 识别品类
 + 锁该品类真正会漂的产品真相
-+ 选择低 AI 风险镜头库
++ 选择一个 buyer event
++ 用低 AI 风险拍法承载这个事件
 + 再写 5 个 16:9 keyframe
 ```
 
 默认输出仍然是一张故事版图：图里包含 5 格连续的 16:9 keyframe。类目适配只发生在内部，不作为额外输出段落。
+
+低 AI 风险不是最终目标。故事版不能退化成平铺、微距、挂拍、CTA 的目录图；至少两格要承担真实使用事件或情绪 payoff，至少两格要能检查商品细节。
 
 规则来源：
 
