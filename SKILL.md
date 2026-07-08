@@ -1,13 +1,13 @@
 ---
 name: storyboard-amazon-listing-demo
-description: Use when a user wants an Amazon product-led category-adapted creative storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and one storyboard image with 5 numbered 16:9 product-proof keyframes with the product as the main subject.
+description: Use when a user wants an Amazon product-led, evidence-grounded creative storyboard from a product link, ASIN, product image, product screenshot, ecommerce page, or short product description. The required output format is exactly product image first, then storyboard, then 15-second or 30-second video script text. The storyboard section contains a Creative Film Treatment, a Shooting World Lock, and one storyboard image with 5 numbered 16:9 product-proof keyframes with the product as the main subject.
 ---
 
 # 故事版的 Amazon 商品展示 Skill
 
 ## Purpose
 
-Turn a product into an Amazon-ready product-led, category-adapted creative storyboard package with exactly three default sections:
+Turn a product into an Amazon-ready product-led, evidence-grounded creative storyboard package with exactly three default sections:
 
 1. 产品图
 2. 故事版
@@ -20,15 +20,15 @@ The platform difference is only this:
 - TikTok version: 9:16 vertical, creator / UGC, phone-video feel.
 - Amazon version: 16:9 landscape, product-led, listing / A+ buyer-proof feel, but still social-commerce usable and visually cinematic.
 
-Important: product-led does not mean removing the user. For apparel, wearable items, accessories, beauty, fitness, pet products, tools, or any product whose value depends on human/pet interaction, the storyboard must include the user/wearer/operator/pet in the relevant panels. The product remains the hero, but real use is part of the product proof.
+Important: product-led does not mean removing the user. For any product whose value depends on real interaction, the storyboard must include the relevant user, operator, wearer, pet, surface, compatible object, or environment in the relevant panels. The product remains the hero, but real use is part of the product proof.
 
-Do not expand this skill into a long Amazon strategy, claim report, task system, or asset pipeline unless the user explicitly asks. Category selection, product locks, and the cinematic layer live inside `## 2. 故事版`, not as extra default sections.
+Do not expand this skill into a long Amazon strategy, claim report, task system, or asset pipeline unless the user explicitly asks. Product behavior selection, product locks, and the cinematic layer live inside `## 2. 故事版`, not as extra default sections.
 
 ## When To Use
 
 Use this skill when the user asks for:
 
-- Amazon product-led category-adapted creative storyboard.
+- Amazon product-led evidence-grounded creative storyboard.
 - Amazon product listing storyboard.
 - Amazon A+ or listing demo preparation.
 - StoreClaw Amazon image-to-video preparation.
@@ -104,45 +104,70 @@ Reference-product rule: if there is no real product image, reliable product page
 
 Internally extract product identity anchors before creating the storyboard: shape, silhouette, color, material, logo/label placement, visible construction details, proportions, scale cues, and what must not change. Do not expose this as an extra default section.
 
-## Category Adapter
+## Product Behavior Adapter
 
-Before choosing a creative direction, infer one primary category and any secondary modifier. Do not expose this as an extra default output section. The adapter decides what must stay locked, which keyframes are useful, and which scenes are high risk.
+Before choosing a creative direction, infer one primary product behavior and any secondary modifier. Do not expose this as an extra default output section. The adapter decides what must stay locked, which buyer event is supported by evidence, which proof beats are useful, and which scenes are high risk.
 
-Primary categories:
+Behavior adapters, not product-type defaults:
 
-- Apparel / wearable: lock color, silhouette, neckline, sleeve length, fit, print / logo placement, wearer crop, and fabric behaviour. Prefer torso crops, fabric detail, flat lay, natural fit check, and hanger or folded product shots. Avoid model-first fashion ads and clothing-type drift.
-- Custom / personalized product modifier: lock one Design Asset. The same uploaded image, logo, message concept, or visual placeholder must appear across preview, detail, worn/use, and final product frames. Do not switch between blank boxes, different photos, new logos, slogans, or different print placements.
-- Pet product: lock product shape, size, material, pet contact method, and scale against the pet. Prefer floor-level use, hand setup, pet interaction, size proof, and texture detail. Avoid unsupported safety, indestructibility, health, or training claims.
-- Tool / kitchen / home gadget: lock parts, buttons, handles, openings, blades, cords, ports, setup order, and hand operation. Prefer setup, operation, detail, use result, and storage. Avoid inventing parts or showing impossible use.
-- Beauty / personal care: lock packaging, applicator, texture, use area, and visible amount. Prefer bottle / jar hero, texture, hand application, bathroom or vanity context, and finished routine. Avoid medical, before/after, cure, whitening, anti-aging, or exaggerated skin claims.
-- Electronics / accessory: lock ports, buttons, screen state, cable direction, size ratio, and compatible object. Prefer desk setup, connection detail, hand scale, interface-free product use, and clean final placement. Avoid fake UI, wrong ports, fake brands, and sci-fi lighting.
-- Gift / decor / lifestyle object: lock material, size, placement, packaging, and surface context. Prefer tabletop, unboxing, room placement, close detail, and final decor state. Avoid luxury showroom overreach and excessive emotional acting.
+- Worn / carried / on-body: lock silhouette, color, fit, placement, scale, and contact with the body or carried object. Use only the body crop or context needed to prove use.
+- Personalized / configurable: lock one Design Asset, selected option, preview state, placement, and final output. Do not switch between unrelated logos, messages, photos, or layouts.
+- Hand-operated / assembled / installed: lock parts, buttons, handles, openings, cords, ports, setup order, and hand operation. Avoid inventing parts or showing impossible use.
+- Applied / dispensed / textured: lock packaging, applicator, visible amount, texture, contact surface, and routine step. Avoid medical, before/after, cure, safety, or performance claims without evidence.
+- Connected / paired / compatible: lock ports, screen state if visible, cable direction, compatible object, size ratio, and setup state. Avoid fake UI, wrong ports, fake brands, and sci-fi lighting.
+- Placed / displayed / stored: lock material, scale, placement, packaging if visible, surface context, and final arrangement. Avoid decorative locations that hide the product.
+- Living-subject interaction: lock product shape, material, contact method, and scale against the person, pet, or subject. Avoid unsupported safety, durability, health, or training claims.
 
-Use the lowest-risk camera method that can still carry a real buyer event. Human faces, large groups, dramatic reactions, outdoor lifestyle scenes, readable UI, and perfect model poses are high-risk unless the category and user request specifically require them, but do not replace the event with a static catalog sequence.
+Use the lowest-risk camera method that can still carry a real buyer event. Human faces, large groups, dramatic reactions, outdoor lifestyle scenes, readable UI, and perfect model poses are high-risk unless the product evidence or user request specifically requires them, but do not replace the event with a static catalog sequence.
+
+## Product-Led Creative Triage
+
+Borrow the lightweight thinking of TVC creative development without turning this skill into a multi-stage TVC workflow. Internally decide these five items before writing or generating the storyboard:
+
+1. `shopper_question`: what buyer doubt or decision does the video answer?
+2. `reason_to_watch`: why this needs a short video instead of only a static product image.
+3. `product_entrance`: how and when the product becomes the clear hero in the first 1-2 panels.
+4. `buyer_event`: the evidence-supported action or moment that makes the product matter.
+5. `visual_proposition`: the simple filming idea that connects product proof with the buyer event.
+
+Do not expose these five items as extra default sections. They only control the Creative Film Treatment, Shooting World Lock, and five keyframes.
+
+The buyer event must come from product evidence, visible function, listing context, or the user's explicit direction. Reject events that add unsupported props, people, emotional stakes, use cases, locations, UI, or claims. If multiple events are possible, choose the one with the lowest visual invention and strongest product proof.
 
 ## Creative Proof Balance
 
-The Category Adapter is a guardrail, not the creative idea. Do not let it collapse the storyboard into five inspection shots.
+The adapter is a guardrail, not the creative idea. Do not let it collapse the storyboard into five inspection shots.
 
-Before generating the storyboard image, choose one buyer event that makes the product matter:
+Before generating the storyboard image, choose one buyer event that makes the product matter and is supported by the provided evidence. Common event families include:
 
-- Apparel / wearable: first wear, fit check, outfit transition, mirror reveal, activity-ready moment.
-- Custom / personalized product: upload-to-print reveal, gift reveal, group identity, creator merch, memory made wearable.
-- Pet product: pet discovers it, owner sets it up, first interaction, size proof, daily routine.
-- Tool / kitchen / home gadget: problem setup, operation moment, useful result, cleanup or storage.
-- Beauty / personal care: routine step, texture reveal, application moment, vanity/bathroom finish.
-- Electronics / accessory: connection setup, desk/travel use, hand-scale proof, clean setup result.
-- Gift / decor / lifestyle object: unboxing, placement, room mood change, gifting moment.
+- selection / preview / configuration,
+- setup / opening / assembly / placement,
+- hand operation / use moment / routine step,
+- texture / scale / fit / compatibility proof,
+- visible result / final state / storage,
+- comparison or transformation only when the source evidence supports it.
 
 The five panels should balance proof and story:
 
-1. SKU anchor: exact product identity.
-2. Event setup: why the product is being used now.
+1. Product entrance / SKU anchor: exact product identity and the reason to watch.
+2. Event setup / shopper question: why the product is being used or inspected now.
 3. Tactile proof: material, print, component, operation, scale, or texture.
 4. Use / emotional payoff: the product doing its job in a real scene.
 5. Purchase confidence: final readable product state, fit, result, setup, or included pieces.
 
-At least two panels must be inspectable product proof, and at least two panels must carry the buyer event. Reject a storyboard that is only flat lay, macro, hanger, pack shot, and CTA unless the user explicitly asks for catalog assets.
+At least two panels must be inspectable product proof, and at least two panels must carry the buyer event. Reject a storyboard that is only flat lay, macro, hanger, pack shot, and CTA unless the user explicitly asks for catalog assets. Also reject a storyboard whose buyer event is more creative than the evidence supports.
+
+## Realism Guard
+
+Realism is a validation layer, not a style word. The storyboard should look like plausible Amazon listing / A+ / brand production footage.
+
+Before final delivery, reject or regenerate if:
+
+- decorative props or locations distract from the buying decision,
+- lighting, surfaces, shadows, hands, scale, or product contact look physically implausible,
+- the scene feels like a fantasy ad instead of a believable ecommerce / brand proof asset,
+- the product is present but not readable enough for a shopper to inspect,
+- the storyboard relies on mood, lifestyle, or emotional staging to compensate for weak product proof.
 
 ## Storyboard Rules
 
@@ -152,7 +177,7 @@ The goal of the storyboard is to make an Amazon product demo visually clear:
 
 - product is the main subject,
 - product shape and components are inspectable,
-- real user or wearer proves use when the category requires it,
+- real user, operator, subject, surface, or compatible object proves use when product behavior requires it,
 - social-media usable context, not a dead catalog layout,
 - camera distance and angle are clear,
 - one useful buyer-proof idea per frame,
@@ -160,7 +185,7 @@ The goal of the storyboard is to make an Amazon product demo visually clear:
 - clean but realistic ecommerce lighting,
 - no fake Amazon UI, review stars, badges, coupons, or certifications.
 
-Do not create the storyboard as five unrelated concept images. The storyboard must feel like one category-aware product proof sequence with a buyer event. Pick one Creative Film Treatment, one Shooting World Lock, the relevant Category Adapter, and one buyer event first, then vary camera distance, product action, and framing.
+Do not create the storyboard as five unrelated concept images. The storyboard must feel like one product-aware proof sequence with an evidence-supported buyer event. Pick one Creative Film Treatment, one Shooting World Lock, the relevant adapter, one product entrance, and one buyer event first, then vary camera distance, product action, and framing.
 
 Default storyboard format:
 
@@ -182,32 +207,34 @@ These are subparts of the storyboard section. They do not count as extra output 
 
 ### Creative Film Treatment
 
-Choose one cinematic direction before generating panels. It must come from the product category, buyer event, buyer use case, and risk level, not from random style words.
+Choose one cinematic direction before generating panels. It must come from product evidence, shopper question, product entrance, buyer event, buyer use case, and risk level, not from random style words.
 
 The treatment must lock:
 
 - visual premise: what buyer event are we filming,
-- style: ordinary customer video / clean product proof / premium macro detail / apartment try-on / creator desk setup / outdoor proof / gift reveal / other product-specific direction,
+- reason to watch: what the viewer can learn only because this is shown as video,
+- product entrance: where the product becomes the clear hero,
+- style: ordinary customer video / clean product proof / premium macro detail / hands-on demo / setup sequence / workspace use / home use / outdoor proof / other product-specific direction,
 - lighting and mood: soft window light, golden hour, diffused overcast, practical indoor light, cinematic side light, etc.,
-- lens and camera language: mirror selfie, handheld close-up, locked product shot, slow push-in, over-the-shoulder, macro detail,
+- lens and camera language: self-shot, handheld close-up, locked product shot, slow push-in, over-the-shoulder, macro detail,
 - color palette: 3-5 grounded colors from the product and scene.
 
-Avoid saying only "cinematic", "premium", or "大片感". Those words are not a treatment unless they specify scene, light, lens, product action, buyer event, and why that treatment is safe for the category.
+Avoid saying only "cinematic", "premium", or "大片感". Those words are not a treatment unless they specify scene, light, lens, product entrance, product action, buyer event, and why that treatment is safe for the evidence.
 
 ### Shooting World Lock
 
-Before writing or generating the 5 keyframes, lock a shared visual theme layer. Continuity is defined first by product truth, then by the category adapter, then by the scene:
+Before writing or generating the 5 keyframes, lock a shared visual theme layer. Continuity is defined first by product truth, then by the behavior adapter, then by the scene:
 
 - same product and same product-state,
-- same wearer/user/operator/pet when the category needs real use,
-- same location or continuous campaign world; process sequences may move from preview to detail to use if the product and category locks remain stable,
+- same wearer/user/operator/pet/subject/surface when product behavior needs real use,
+- same location or continuous campaign world; process sequences may move from preview to detail to use if the product and behavior locks remain stable,
 - same light source and color temperature,
 - same camera/lens language,
 - same wardrobe, props, surface, and background family,
 - same product scale and placement logic,
 - same motion language from frame to frame.
 
-Product consistency beats single-frame beauty. Five medium-but-consistent, category-safe frames are better than five beautiful mismatched frames.
+Product consistency beats single-frame beauty. Five medium-but-consistent, behavior-safe frames are better than five beautiful mismatched frames.
 
 The 5-frame visual sequence should follow this logic:
 
@@ -229,7 +256,7 @@ Keep continuity locked inside the current storyboard:
 - same location only within this generated sequence,
 - same lighting family,
 - same camera language,
-- same shirt fit and print placement for apparel,
+- same product fit, placement, part relationship, or visible customization state where relevant,
 - same use state where relevant,
 - no scene carried over from previous projects unless the user asks for it.
 
@@ -241,19 +268,21 @@ Every storyboard image prompt must include a strict Amazon product-led contract.
 
 - The storyboard must look like Amazon listing / A+ product demo frames, not TikTok UGC frames.
 - Every panel must be 16:9 landscape.
-- All five panels must share one product-proof system: same product locks, same category adapter, same design asset when personalized, same material logic, and one coherent campaign visual language.
+- All five panels must share one product-proof system: same product locks, same behavior adapter, same design asset when personalized, same material logic, and one coherent campaign visual language.
 - Every panel must inherit the Creative Film Treatment and Shooting World Lock.
+- The product must enter clearly in the first 1-2 panels.
+- The buyer event must be supported by product evidence, visible function, listing context, or explicit user direction.
 - Product should usually occupy 45%-70% of each frame.
 - Product use must be based on actions the product can visibly support. If the product has no visible physical result, do not invent one.
 - At least two panels must show product structure, texture, component, size, or operation close enough for inspection.
-- Human presence must match the category. Apparel and accessories require a wearer. Tools require hands/operator. Pet products require pet interaction when the value depends on use. Use hands only for products where a full user would distract from proof.
-- Backgrounds must be simple and buyer-relevant but socially usable: mirror/selfie room, street, studio corner, desk, gym, pet area, workspace, kitchen counter, bathroom shelf, outdoor use area, or other product-specific context selected by the Category Adapter.
+- Human or subject presence must match product behavior. Worn or carried products need the relevant body or carrying context; operated products need hands or an operator; compatible products need the compatible object; living-subject products need the subject interaction when value depends on use. Use the smallest necessary human/subject presence that proves the product.
+- Backgrounds must be simple and buyer-relevant but socially usable: simple room, street, studio corner, desk, gym, pet area, workspace, kitchen counter, bathroom shelf, outdoor use area, or other product-specific context selected by the adapter. Do not add decorative props or locations that are unrelated to the buying decision.
 - Text inside generated images must be avoided unless it is required by the product reference. Add final copy later as design overlay, not as AI-generated fake text.
 - The final storyboard must prioritize product proof plus real-use social believability over static catalog layout.
 
-For apparel, default to a faceless or partially cropped wearer when model realism is risky. Show torso, hands, mirror reflection, shoulder-level crop, hem adjustment, or walking crop. Avoid generating a new face in every panel.
+For user-dependent products, default to faceless or partially cropped users when model realism is risky. Show only the body part, hand, operator, wearer, pet, or environment needed to prove use. Avoid generating a new face or identity in every panel.
 
-For high-AI-risk categories, prefer believable filming constraints over over-produced scenes: cropped faces, partial hands, real surface texture, matte material, imperfect framing, lived-in rooms, and motivated light. Product truth and continuity are more valuable than a polished fantasy ad.
+For high-AI-risk cases, prefer believable filming constraints over over-produced scenes: cropped faces, partial hands, real surface texture, matte material, imperfect framing, lived-in rooms, and motivated light. Product truth and continuity are more valuable than a polished fantasy ad.
 
 Avoid:
 
@@ -262,8 +291,8 @@ Avoid:
 - product hidden inside lifestyle decor,
 - removing the user/wearer when the product needs a user to make sense,
 - five unrelated scenes or five different people in one storyboard,
-- changing the wearer, room, lighting, or shirt fit between panels,
-- changing the category adapter, Design Asset, print area, interface, part set, or material logic between panels,
+- changing the user, subject, room, lighting, or product fit between panels,
+- changing the behavior adapter, Design Asset, print area, interface, part set, or material logic between panels,
 - AI-looking perfect faces, plastic skin, extra fingers, impossible hands, or overposed models,
 - glossy fake luxury scene,
 - floating product,
@@ -277,15 +306,20 @@ Avoid:
 Reject and regenerate the storyboard before final delivery if it has:
 
 - product not dominant in most panels,
+- product entrance is late or unclear,
 - no visible buyer event; five panels are only product inspection or catalog pack shots,
+- buyer event is unsupported by the product evidence or user request,
+- reason to watch is unclear; the same information would work better as a static product image,
 - product geometry or color drift,
 - invented packaging, logo, badge, or readable claim,
+- decorative props, location, or emotional staging distract from the buying decision,
 - person, pet, or room becoming the main subject,
-- apparel/accessory storyboard has no wearer or use person,
+- use-dependent product has no necessary wearer, operator, hand, pet, or context proof,
 - storyboard panels do not look like one coherent product-proof sequence,
 - personalized product changes its Design Asset between panels,
-- wearer identity, shirt fit, print placement, or lighting changes between panels,
+- user identity, product fit, visible placement, part relationship, or lighting changes between panels,
 - 9:16 TikTok framing,
+- the scene looks over-staged, physically implausible, or less realistic than a usable ecommerce production asset,
 - a payoff scene that implies medical, health, pet safety, beauty, or performance claims beyond product evidence.
 
 ## Storyboard Realism And Continuity
@@ -299,7 +333,7 @@ When a storyboard image already exists, treat these as locked for that project:
 - selected location only if present,
 - lighting and ecommerce-shot style,
 - camera distance progression,
-- apparel fit, print placement, and wearer crop,
+- product fit, placement, user/operator crop, and visible customization state where relevant,
 - object/result continuity.
 
 Do not rewrite prompts as if starting from a blank canvas, and do not reuse a previous storyboard's person or room as a default.
@@ -376,13 +410,13 @@ Default settings:
 - 16:9 landscape
 - 15 seconds
 - product-led Amazon listing demo with social-media usable real-use context
-- one Category Adapter selected before the creative direction
-- one Creative Film Treatment selected from the product category
+- one product-behavior adapter selected before the creative direction
+- one Creative Film Treatment selected from product evidence
 - one Shooting World Lock for all five panels
 - clean realistic ecommerce light
 - buyer-relevant background
 - product occupies 45%-70% of frame
-- user/wearer/operator included when the category requires real-use proof
+- user/wearer/operator/subject/context included when product behavior requires real-use proof
 - one simple product action per shot
 
 Prefer:
@@ -390,10 +424,10 @@ Prefer:
 - clean surfaces,
 - product close-ups,
 - visible components,
-- wearer or use person when the product is apparel/accessory/use-dependent,
+- necessary user/operator/wearer/subject/context when the product requires real-use proof,
 - social proof scenes that still keep the product readable,
-- one wearer and one location across all panels,
-- cropped torso/hands/mirror shots when they reduce fake model risk,
+- one relevant user, subject, surface, or location logic across all panels,
+- cropped body parts, hands, object scale, or surface details when they reduce fake model risk,
 - realistic hand scale,
 - simple use context,
 - real contact shadows,
@@ -449,14 +483,17 @@ Before responding, check:
 
 - Does every product have a product image first?
 - Is there a storyboard after the product image?
-- Did you infer and apply one Category Adapter?
+- Did you infer and apply one product-behavior adapter?
+- Did you identify a shopper question, reason to watch, product entrance, and evidence-supported buyer event internally?
 - Did you choose one buyer event and keep it visible inside `## 2. 故事版`?
+- Is the buyer event supported by product evidence, listing context, or explicit user direction?
 - Does `## 2. 故事版` include a Creative Film Treatment?
 - Does `## 2. 故事版` include a Shooting World Lock?
 - Is the storyboard one image containing five numbered 16:9 product-proof panels?
 - Do all five keyframes feel like one coherent product-proof sequence?
 - Do at least two panels carry the buyer event rather than only product inspection?
 - Is the product dominant and inspectable?
+- Does the storyboard look like plausible ecommerce / brand production footage rather than generic AI lifestyle advertising?
 - Is there a 15-second or 30-second script after the storyboard?
 - Are all screen subtitles and voiceover lines in English?
 - Did you avoid extra sections unless requested?

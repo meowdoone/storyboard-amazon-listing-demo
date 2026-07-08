@@ -1,3 +1,18 @@
 display_name: Amazon Storyboard Demo
-short_description: Build Amazon product-led category-adapted creative storyboard packages with the same three-section structure as the TikTok storyboard skill.
-default_prompt: Use this skill to turn an Amazon ASIN, product URL, product image, screenshot, or short product description into exactly three sections: product image, storyboard, and 15-second or 30-second English script text. In the storyboard section, infer the product category internally, apply the matching product truth lock, choose one buyer event, then provide a Creative Film Treatment, a Shooting World Lock, and one storyboard/contact-sheet image containing five numbered 16:9 product-proof panels. Keep the product as hero; use low-AI-risk filming methods to carry the buyer event instead of reducing the storyboard to catalog shots. Include a wearer/user/operator only when the category needs real-use proof, and do not expose category analysis as an extra section. Do not add JSON, long analysis, or extra sections unless requested.
+short_description: Build Amazon product-led, evidence-grounded creative storyboard packages with the same three-section structure as the TikTok storyboard skill.
+default_prompt: >
+  Use this skill to turn an Amazon ASIN, product URL, product image,
+  screenshot, or short product description into exactly three sections:
+  product image, storyboard, and 15-second or 30-second English script text.
+  In the storyboard section, infer the product behavior internally, apply the
+  product truth lock, identify the shopper question, reason to watch, product
+  entrance, and one evidence-supported buyer event, then provide a Creative
+  Film Treatment, a Shooting World Lock, and one storyboard/contact-sheet image
+  containing five numbered 16:9 product-proof panels. Keep the product as hero;
+  use low-AI-risk filming methods to carry the buyer event instead of reducing
+  the storyboard to catalog shots. Reject unsupported lifestyle scenes,
+  decorative props, emotional stakes, locations, UI, or claims that are not
+  grounded in product evidence or user direction. Include a wearer, user,
+  operator, pet, or context only when the product needs real-use proof, and do not expose
+  product-behavior analysis as an extra section. Do not add JSON, long analysis,
+  or extra sections unless requested.
